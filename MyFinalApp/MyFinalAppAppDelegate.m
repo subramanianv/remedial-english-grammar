@@ -21,8 +21,14 @@
 {
     // Override point for customization after application launch.
      
+    MyFinalAppViewController *vc=[[MyFinalAppViewController alloc]initWithNibName:@"MyFinalAppViewController" bundle:nil];
+
+    [self setViewController:vc];
+    [vc release];
+    
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
