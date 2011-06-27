@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>New item</key>
+	<array>
+		<string>Parts of speech</string>
+		<string>Articles</string>
+		<string>Pronouns</string>
+		<string>Tenses</string>
+		<string>Question Tag</string>
+		<string>Correlative Conjunctions</string>
+		<string>Subject Verb Agreement</string>
+		<string>Degrees of comparision</string>
+		<string>Relative pronouns</string>
+		<string>Active voice and passive voice</string>
+		<string>Dangling partiple</string>
+		<string>Prepositions of time and place</string>
+	</array>
+</dict>
+</plist>

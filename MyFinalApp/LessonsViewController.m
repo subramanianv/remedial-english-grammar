@@ -1,46 +1,23 @@
 //
-//  MyFinalAppViewController.m
+//  LessonsViewController.m
 //  MyFinalApp
 //
 //  Created by Subramanian Venkatesan on 6/26/11.
 //  Copyright 2011 SRv. All rights reserved.
 //
 
-#import "MyFinalAppViewController.h"
 #import "LessonsViewController.h"
-#import "TestsViewController.h"
-@implementation MyFinalAppViewController
-@synthesize LessonsButton,testButton;
+//#import "LessonsList.h"
 
-//my method
--(IBAction)LessonsButtonClicked
+@implementation LessonsViewController
+@synthesize nav;
+- (id)init
 {
-
-        TestsViewController *vc=[[TestsViewController alloc]init];
-    
-    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:vc];
-    
-    
-    [self presentModalViewController:nav animated:YES];
-    [vc release];
-    [nav release];
-    
-    
-    
+    self = [super init];
+    if (self) {
+            }
+    return self;
 }
--(IBAction)TestButtonClicked
-{
-    TestsViewController *test=[[TestsViewController alloc]init];
-    [self presentModalViewController:test animated:YES];
-    [test release];
-    
-    
-}
-
-
-
-
-
 
 - (void)dealloc
 {
@@ -56,6 +33,12 @@
 }
 
 #pragma mark - View lifecycle
+
+- (void)loadView
+{
+    
+}
+
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
