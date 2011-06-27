@@ -107,10 +107,16 @@ self.array=[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pat
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
-       
-    ContentView *vc=[[ContentView alloc]initWithNibName:@"ContentView" bundle:nil withTitle:[array objectAtIndex:indexPath.row]];
+    
+    NSDictionary *dict=[[NSDictionary alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"LessonContent" ofType:@"plist"]];
+    
+    ContentView *vc=[[ContentView alloc]initWithNibName:@"ContentView" bundle:nil withTitle:[array objectAtIndex:indexPath.row] withDictionary:[dict objectForKey:[array objectAtIndex:indexPath.row]] withTotal:[dict count]];
+    
+                                                                                                                                                        
     [self.navigationController pushViewController:vc animated:YES];
     [vc release];
+    [dict release];
+    
 }
 
 #pragma mark - View lifecycle
