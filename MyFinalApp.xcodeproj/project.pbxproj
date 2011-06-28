@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5596F10613B8739E00678B52 /* LessonContent.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5596F10513B8739E00678B52 /* LessonContent.plist */; };
+		5598E75713B732B9002646BF /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5598E75513B732B9002646BF /* ContentView.m */; };
+		5598E75813B732B9002646BF /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5598E75613B732B9002646BF /* ContentView.xib */; };
+		5598E76513B747E0002646BF /* List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5598E76413B747E0002646BF /* List.plist */; };
 		55B387AA13B680EB00FEB1DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B387A913B680EB00FEB1DF /* UIKit.framework */; };
 		55B387AC13B680EB00FEB1DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B387AB13B680EB00FEB1DF /* Foundation.framework */; };
 		55B387AE13B680EB00FEB1DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B387AD13B680EB00FEB1DF /* CoreGraphics.framework */; };
@@ -22,6 +26,9 @@
 		55B387D413B680EC00FEB1DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55B387D213B680EC00FEB1DF /* InfoPlist.strings */; };
 		55B387D713B680EC00FEB1DF /* MyFinalAppTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 55B387D613B680EC00FEB1DF /* MyFinalAppTests.h */; };
 		55B387D913B680EC00FEB1DF /* MyFinalAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B387D813B680EC00FEB1DF /* MyFinalAppTests.m */; };
+		55B387E413B6860300FEB1DF /* LessonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B387E313B6860300FEB1DF /* LessonsViewController.m */; };
+		55B387E713B6869C00FEB1DF /* TestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B387E613B6869700FEB1DF /* TestsViewController.m */; };
+		55B387F013B6992000FEB1DF /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = 55B387EF13B6992000FEB1DF /* 96-book.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,26 +42,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5596F10513B8739E00678B52 /* LessonContent.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LessonContent.plist; sourceTree = "<group>"; };
+		5598E75413B732B9002646BF /* ContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentView.h; path = MyFinalApp.xcodeproj/ContentView.h; sourceTree = "<group>"; };
+		5598E75513B732B9002646BF /* ContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentView.m; path = MyFinalApp.xcodeproj/ContentView.m; sourceTree = "<group>"; };
+		5598E75613B732B9002646BF /* ContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentView.xib; path = MyFinalApp.xcodeproj/ContentView.xib; sourceTree = "<group>"; };
+		5598E76413B747E0002646BF /* List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = List.plist; path = ../List.plist; sourceTree = "<group>"; };
 		55B387A513B680EB00FEB1DF /* MyFinalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFinalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B387A913B680EB00FEB1DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		55B387AB13B680EB00FEB1DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		55B387AD13B680EB00FEB1DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		55B387B113B680EB00FEB1DF /* MyFinalApp-Info.plist */ = {isa = PBXFileReference; path = "MyFinalApp-Info.plist"; sourceTree = "<group>"; };
+		55B387B113B680EB00FEB1DF /* MyFinalApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyFinalApp-Info.plist"; sourceTree = "<group>"; };
 		55B387B313B680EB00FEB1DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		55B387B513B680EB00FEB1DF /* MyFinalApp-Prefix.pch */ = {isa = PBXFileReference; path = "MyFinalApp-Prefix.pch"; sourceTree = "<group>"; };
+		55B387B513B680EB00FEB1DF /* MyFinalApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyFinalApp-Prefix.pch"; sourceTree = "<group>"; };
 		55B387B613B680EB00FEB1DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		55B387B813B680EB00FEB1DF /* MyFinalAppAppDelegate.h */ = {isa = PBXFileReference; path = MyFinalAppAppDelegate.h; sourceTree = "<group>"; };
+		55B387B813B680EB00FEB1DF /* MyFinalAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFinalAppAppDelegate.h; sourceTree = "<group>"; };
 		55B387B913B680EB00FEB1DF /* MyFinalAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFinalAppAppDelegate.m; sourceTree = "<group>"; };
 		55B387BC13B680EB00FEB1DF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		55B387BE13B680EB00FEB1DF /* MyFinalAppViewController.h */ = {isa = PBXFileReference; path = MyFinalAppViewController.h; sourceTree = "<group>"; };
+		55B387BE13B680EB00FEB1DF /* MyFinalAppViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFinalAppViewController.h; sourceTree = "<group>"; };
 		55B387BF13B680EB00FEB1DF /* MyFinalAppViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFinalAppViewController.m; sourceTree = "<group>"; };
 		55B387C213B680EB00FEB1DF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MyFinalAppViewController.xib; sourceTree = "<group>"; };
 		55B387C913B680EB00FEB1DF /* MyFinalAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFinalAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		55B387D113B680EB00FEB1DF /* MyFinalAppTests-Info.plist */ = {isa = PBXFileReference; path = "MyFinalAppTests-Info.plist"; sourceTree = "<group>"; };
+		55B387D113B680EB00FEB1DF /* MyFinalAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyFinalAppTests-Info.plist"; sourceTree = "<group>"; };
 		55B387D313B680EC00FEB1DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		55B387D513B680EC00FEB1DF /* MyFinalAppTests-Prefix.pch */ = {isa = PBXFileReference; path = "MyFinalAppTests-Prefix.pch"; sourceTree = "<group>"; };
+		55B387D513B680EC00FEB1DF /* MyFinalAppTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyFinalAppTests-Prefix.pch"; sourceTree = "<group>"; };
 		55B387D613B680EC00FEB1DF /* MyFinalAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFinalAppTests.h; sourceTree = "<group>"; };
 		55B387D813B680EC00FEB1DF /* MyFinalAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFinalAppTests.m; sourceTree = "<group>"; };
+		55B387E213B6860300FEB1DF /* LessonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LessonsViewController.h; sourceTree = "<group>"; };
+		55B387E313B6860300FEB1DF /* LessonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LessonsViewController.m; sourceTree = "<group>"; };
+		55B387E513B6869700FEB1DF /* TestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestsViewController.h; sourceTree = "<group>"; };
+		55B387E613B6869700FEB1DF /* TestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestsViewController.m; sourceTree = "<group>"; };
+		55B387EF13B6992000FEB1DF /* 96-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "96-book.png"; path = "../96-book.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +101,9 @@
 		55B3879A13B680EA00FEB1DF = {
 			isa = PBXGroup;
 			children = (
+				5598E75413B732B9002646BF /* ContentView.h */,
+				5598E75513B732B9002646BF /* ContentView.m */,
+				5598E75613B732B9002646BF /* ContentView.xib */,
 				55B387AF13B680EB00FEB1DF /* MyFinalApp */,
 				55B387CF13B680EB00FEB1DF /* MyFinalAppTests */,
 				55B387A813B680EB00FEB1DF /* Frameworks */,
@@ -113,11 +133,17 @@
 		55B387AF13B680EB00FEB1DF /* MyFinalApp */ = {
 			isa = PBXGroup;
 			children = (
+				5598E76413B747E0002646BF /* List.plist */,
+				5596F10513B8739E00678B52 /* LessonContent.plist */,
 				55B387B813B680EB00FEB1DF /* MyFinalAppAppDelegate.h */,
 				55B387B913B680EB00FEB1DF /* MyFinalAppAppDelegate.m */,
+				55B387E213B6860300FEB1DF /* LessonsViewController.h */,
+				55B387E313B6860300FEB1DF /* LessonsViewController.m */,
 				55B387BB13B680EB00FEB1DF /* MainWindow.xib */,
 				55B387BE13B680EB00FEB1DF /* MyFinalAppViewController.h */,
 				55B387BF13B680EB00FEB1DF /* MyFinalAppViewController.m */,
+				55B387E513B6869700FEB1DF /* TestsViewController.h */,
+				55B387E613B6869700FEB1DF /* TestsViewController.m */,
 				55B387C113B680EB00FEB1DF /* MyFinalAppViewController.xib */,
 				55B387B013B680EB00FEB1DF /* Supporting Files */,
 			);
@@ -127,6 +153,7 @@
 		55B387B013B680EB00FEB1DF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				55B387EF13B6992000FEB1DF /* 96-book.png */,
 				55B387B113B680EB00FEB1DF /* MyFinalApp-Info.plist */,
 				55B387B213B680EB00FEB1DF /* InfoPlist.strings */,
 				55B387B513B680EB00FEB1DF /* MyFinalApp-Prefix.pch */,
@@ -228,6 +255,10 @@
 				55B387B413B680EB00FEB1DF /* InfoPlist.strings in Resources */,
 				55B387BD13B680EB00FEB1DF /* MainWindow.xib in Resources */,
 				55B387C313B680EB00FEB1DF /* MyFinalAppViewController.xib in Resources */,
+				55B387F013B6992000FEB1DF /* 96-book.png in Resources */,
+				5598E75813B732B9002646BF /* ContentView.xib in Resources */,
+				5598E76513B747E0002646BF /* List.plist in Resources */,
+				5596F10613B8739E00678B52 /* LessonContent.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +297,9 @@
 				55B387B713B680EB00FEB1DF /* main.m in Sources */,
 				55B387BA13B680EB00FEB1DF /* MyFinalAppAppDelegate.m in Sources */,
 				55B387C013B680EB00FEB1DF /* MyFinalAppViewController.m in Sources */,
+				55B387E413B6860300FEB1DF /* LessonsViewController.m in Sources */,
+				55B387E713B6869C00FEB1DF /* TestsViewController.m in Sources */,
+				5598E75713B732B9002646BF /* ContentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +480,7 @@
 				55B387DE13B680EC00FEB1DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55B387DF13B680EC00FEB1DF /* Build configuration list for PBXNativeTarget "MyFinalAppTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +489,7 @@
 				55B387E113B680EC00FEB1DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

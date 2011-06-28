@@ -18,15 +18,21 @@
     UISwipeGestureRecognizer *swipeLeft;
     UISwipeGestureRecognizer *swipeRight;
     int current;
+    NSDictionary *contentDictionary;
+    int total;
+    UILabel *labelno;
+    
     BOOL shouldanimate;
 }
+
 @property(nonatomic,retain)UIPageControl *pageControl;
+@property(nonatomic,retain)NSDictionary *_contentDictionary;
 @property(nonatomic,retain)UISwipeGestureRecognizer *recognizer;
 @property(nonatomic,retain)IBOutlet UIWebView *webView;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil withTitle:(NSString*)aTitle;
-
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil withTitle:(NSString*)aTitle withDictionary:(NSDictionary*)aDict withTotal:(int)atotal;
+-(NSString*)loadHTMLforKey:(NSInteger)key;
 - (void)swipeRightAction:(id)ignored;
 - (void)swipeLeftAction:(id)ignored;
-
+-(void)LoadRequest;
 
 @end

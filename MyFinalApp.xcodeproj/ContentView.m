@@ -11,8 +11,15 @@
 
 @implementation ContentView
 //@synthesize stopButton,webView,nextButton,prevButton;
-@synthesize webView,pageControl,recognizer;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil withTitle:(NSString*)aTitle;
+@synthesize webView,pageControl,recognizer,_contentDictionary;
+
+-(NSString*)loadHTMLforKey:(NSInteger)key
+{
+    
+    return [NSString stringWithFormat:@"%@",[_contentDictionary objectForKey:[NSString stringWithFormat:@"%d",key]]];
+    
+}
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil withTitle:(NSString*)aTitle withDictionary:(NSDictionary*)aDict withTotal:(int)atotal
 {
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -22,14 +29,25 @@
     }
     
     self.title=aTitle;
-    current=0;
+    current=1;
+    self._contentDictionary=aDict;
+    total=[_contentDictionary count];
     
     return self;
+}
+
+-(void)LoadRequest
+{
+    [webView loadHTMLString:[self loadHTMLforKey:current] baseURL:nil];
+    [labelno setText:[NSString stringWithFormat:@"%d/%d",current,total]];
+    
 }
 - (void)dealloc
 {
     [super dealloc];
 }
+
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -43,16 +61,40 @@
 }
 - (void)swipeRightAction:(id)ignored
 {
-    NSLog(@"Swipe Right");
-    [webView loadHTMLString:@"ManUtd" baseURL:nil];
-    // [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.yahoo.com"]]];
+    if (current==1) {
+        
+    }
+    else
+    {
+        
+        swipeLeft.enabled=YES;
+        
+        current--;
+        
+        [self LoadRequest];
+        
+    }
+    
+
 }
 - (void)swipeLeftAction:(id)ignored
 {
-    NSLog(@"Swipe Left");
-    //add Function
-    [webView loadHTMLString:@"Vinod" baseURL:nil];
-  //  [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.manutd.com"]]];
+   
+    
+    NSLog(@"Swipe Right%d",total);
+    if (current==total) {
+        
+    }
+    else
+    {
+        current++;
+        [labelno setText:[NSString stringWithFormat:@"%d/%d",current,total]];
+        
+
+        [self LoadRequest];
+        
+    }
+
     
 }
 
@@ -80,11 +122,35 @@
     
     [parentView addSubview:activityIndicator];
     
-    self.view=parentView;
+    UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(95, 324, 53, 24)];
+    label1.text=@"Slide:";
+    [label1 setBackgroundColor:RGB(230, 230, 250)];
+    
+    
+    labelno=[[UILabel alloc]initWithFrame:CGRectMake(148, 327, 42, 21)];
+    labelno.text=[NSString stringWithFormat:@"%d/%d",current,total];
+    [labelno setBackgroundColor:RGB(230, 230, 250)];
+    
+    
+    [parentView addSubview:label1];
+    [parentView addSubview:labelno];
+    
+    
+    [label1 release];
+        self.view=parentView;
     
 
     [parentView release];
+    
+    [self LoadRequest];
+    
+    
+    
     [webView release];
+   
+    
+    
+    
     [swipeRight release];
     [swipeLeft release];
     
