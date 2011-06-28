@@ -30,6 +30,8 @@
 }
 -(void)FillData
 {
+    self.title=@"Lessons";
+    
 self.array=[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"List" ofType:@"plist"]]objectForKey:@"New item"];
 
     NSLog(@"Called");
