@@ -13,6 +13,31 @@
 //@synthesize stopButton,webView,nextButton,prevButton;
 @synthesize webView,pageControl,recognizer,_contentDictionary;
 
+
+
+-(BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+    
+}
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [self resignFirstResponder];
+    
+    [super viewDidDisappear:animated];
+}
+-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion==UIEventSubtypeMotionShake) {
+        [self swipeLeftAction:nil];
+        
+    }
+}
 -(NSString*)loadHTMLforKey:(NSInteger)key
 {
     
@@ -187,6 +212,7 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    
 }
 
 @end
