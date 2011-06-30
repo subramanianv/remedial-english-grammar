@@ -7,15 +7,20 @@
 //
 
 #import "LessonsViewController.h"
+#import "QuestionView.h"
 //#import "LessonsList.h"
 
 @implementation LessonsViewController
-@synthesize nav;
-- (id)init
+@synthesize beginButton,slider,qlabel;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super init];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-            }
+            
+    }
+    NSLog(@"Called");
+    
     return self;
 }
 
@@ -23,7 +28,22 @@
 {
     [super dealloc];
 }
-
+-(IBAction)BeginButtonClicked:(id)sender
+{
+    
+    QuestionView *qc=[[QuestionView alloc]initWithNibName:@"QuestionView" bundle:nil withTotal:[[qlabel text]intValue]];
+    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:qc];
+    [self presentModalViewController:nav animated:YES];
+    
+}
+-(IBAction)sliderMoved:(id)sender
+{
+   
+    int x=roundl([slider value]);
+    qlabel.text=[NSString stringWithFormat:@"%d",x];
+    
+    
+}
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -34,10 +54,6 @@
 
 #pragma mark - View lifecycle
 
-- (void)loadView
-{
-    
-}
 
 
 /*
