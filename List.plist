@@ -6,16 +6,18 @@
 	<array>
 		<string>Parts of speech</string>
 		<string>Articles</string>
+		<string>Adverbs</string>
+		<string>Adjectives</string>
 		<string>Pronouns</string>
 		<string>Reflexive pronouns</string>
 		<string>Tenses</string>
 		<string>Question Tag</string>
-		<string>Correlative Conjunctions</string>
+		<string>Conjunctions</string>
 		<string>Subject Verb Agreement</string>
 		<string>Degrees of comparison</string>
 		<string>Active voice and passive voice</string>
 		<string>Dangling participle</string>
-		<string>Prepositions of time and place</string>
+		<string>Prepositions</string>
 	</array>
 </dict>
 </plist>
