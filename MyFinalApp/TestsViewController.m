@@ -68,7 +68,15 @@ self.array=[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pat
 }
 
 
+
+-(void)Back
+{
+    [self dismissModalViewControllerAnimated:YES];
+    
+    
+}
 //deglate
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -116,7 +124,9 @@ self.array=[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pat
     
                                                                                                                                                         
     [self.navigationController pushViewController:vc animated:YES];
+    
     [vc release];
+    
     [dict release];
     
 }
@@ -128,6 +138,11 @@ self.array=[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pat
 - (void)loadView
 {
     table=[[UITableView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame] style:UITableViewStylePlain];
+    
+    
+    self.navigationItem.leftBarButtonItem=[[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonItemStylePlain target:self action:@selector(Back)]autorelease];
+   // self.navigationItem.leftBarButtonItem.title=@"Back";
+    
     
     [NSThread detachNewThreadSelector:@selector(enterBackGround) toTarget:self withObject:nil];
     
