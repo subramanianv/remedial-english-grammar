@@ -15,16 +15,10 @@
 
 -(void)enterBackGround
 {
-    NSLog(@"Called");
-    
+      
     
     NSAutoreleasePool *pool=[[NSAutoreleasePool alloc]init];
-   
-         
-  //      array=[[NSArray alloc]initWithObjects:@"Articles",@"Nouns", nil];
-             
-    
-       [self performSelectorOnMainThread:@selector(FillData) withObject:nil waitUntilDone:YES];
+    [self performSelectorOnMainThread:@selector(FillData) withObject:nil waitUntilDone:YES];
     [pool release];
     
 }
@@ -33,9 +27,6 @@
     self.title=@"Lessons";
     
 self.array=[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"List" ofType:@"plist"]]objectForKey:@"New item"];
-
-    NSLog(@"Called");
-    
       [table setDelegate:self];
     [table setDataSource:self];
     [table reloadData];
@@ -56,6 +47,9 @@ self.array=[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pat
 
 - (void)dealloc
 {
+    
+    [dict release];
+    
     [super dealloc];
 }
 
@@ -71,6 +65,8 @@ self.array=[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pat
 
 -(void)Back
 {
+    [array release];
+    
     [self dismissModalViewControllerAnimated:YES];
     
     
@@ -83,11 +79,7 @@ self.array=[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pat
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [array count];//
-    
-    NSLog(@"Called 1%d",[array count]);
-    
-    //[your array count];
+    return [array count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -118,17 +110,24 @@ self.array=[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pat
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
     
-    NSDictionary *dict=[[NSDictionary alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"LessonContent" ofType:@"plist"]];
     
-    ContentView *vc=[[ContentView alloc]initWithNibName:@"ContentView" bundle:nil withTitle:[array objectAtIndex:indexPath.row] withDictionary:[dict objectForKey:[array objectAtIndex:indexPath.row]] withTotal:[dict count]];
+   
+                        
+    //NSDictionary *dict=[[NSDictionary alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"LessonContent" ofType:@"plist"]];
+  
+    NSDictionary *d=[dict objectForKey:[array objectAtIndex:indexPath.row]];
     
-                                                                                                                                                        
+    ContentView *vc=[[ContentView alloc]initWithNibName:@"ContentView" bundle:nil withTitle:[array objectAtIndex:indexPath.row] withDictionary:d withTotal:[dict count]];
+  
+   
+    
+    
+    
     [self.navigationController pushViewController:vc animated:YES];
     
     [vc release];
     
-    [dict release];
-    
+        
 }
 
 #pragma mark - View lifecycle
@@ -146,17 +145,16 @@ self.array=[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pat
     
     [NSThread detachNewThreadSelector:@selector(enterBackGround) toTarget:self withObject:nil];
     
-    
+    self.navigationController.navigationBar.tintColor=RGB(0, 154, 205);
     self.view=table;   
+   
+    
+    
+    dict=[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"LessonContent" ofType:@"plist"]]retain];
 }
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-*/
 
 - (void)viewDidUnload
 {

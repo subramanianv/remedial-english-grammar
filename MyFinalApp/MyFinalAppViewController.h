@@ -14,7 +14,11 @@
 }
 @property(nonatomic,retain)UIButton *testButton;
 @property(nonatomic,retain)UIButton *LessonsButton;
+@property(nonatomic,retain)IBOutlet UIButton *ResultButton;
+
 -(IBAction)TestButtonClicked;
 -(IBAction)LessonsButtonClicked;
+-(IBAction)ShowSavedTests;
+
 
 @end

@@ -12,7 +12,6 @@
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 @interface ContentView : UIViewController<UIWebViewDelegate,UIGestureRecognizerDelegate> {
     UIActivityIndicatorView *activityIndicator;
-    
     UIWebView *webView;
     UIPageControl *pagecontrol;
     UISwipeGestureRecognizer *swipeLeft;
@@ -21,12 +20,13 @@
     NSDictionary *contentDictionary;
     int total;
     UILabel *labelno;
-    
+    UIView *adview;
     BOOL shouldanimate;
 }
-
+@property int current;
+@property int total;
 @property(nonatomic,retain)UIPageControl *pageControl;
-@property(nonatomic,retain)NSDictionary *_contentDictionary;
+@property(nonatomic,copy)NSDictionary *_contentDictionary;
 @property(nonatomic,retain)UISwipeGestureRecognizer *recognizer;
 @property(nonatomic,retain)IBOutlet UIWebView *webView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil withTitle:(NSString*)aTitle withDictionary:(NSDictionary*)aDict withTotal:(int)atotal;
@@ -34,5 +34,4 @@
 - (void)swipeRightAction:(id)ignored;
 - (void)swipeLeftAction:(id)ignored;
 -(void)LoadRequest;
-
 @end

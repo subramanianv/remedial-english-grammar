@@ -11,7 +11,7 @@
 @interface TestsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate> {
     UITableView *table;
     NSArray *array;
-
+    NSDictionary *dict;
 }
 
 @property(nonatomic,retain)UITableView *table;
@@ -19,5 +19,6 @@
 
 -(void)enterBackGround;
 -(void)FillData;
+-(void)Back;
 
 @end

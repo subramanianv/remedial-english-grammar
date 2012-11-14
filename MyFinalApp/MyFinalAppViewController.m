@@ -9,30 +9,54 @@
 #import "MyFinalAppViewController.h"
 #import "LessonsViewController.h"
 #import "TestsViewController.h"
+#import "ResultsTableView.h"
+#import "ContentViewController.h"
 @implementation MyFinalAppViewController
-@synthesize LessonsButton,testButton;
+@synthesize LessonsButton,testButton,ResultButton;
 
 //my method
 -(IBAction)LessonsButtonClicked
 {
 
-        TestsViewController *vc=[[TestsViewController alloc]init];
+
+    NSDictionary *dict=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"AppContent" ofType:@"plist"]];
+    NSArray *array=[dict objectForKey:@"New item"];
+    
+                    
+   ContentViewController *vc=[[ContentViewController alloc]initWithNibName:@"ContentViewController" bundle:nil withArray:array];
+ //   TestsViewController *vc=[[TestsViewController alloc]init];
     
     UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:vc];
-    
-    
     [self presentModalViewController:nav animated:YES];
     [vc release];
     [nav release];
+}
+-(IBAction)ShowSavedTests
+{
+    ResultsTableView *tvc=[[ResultsTableView alloc]initWithNibName:@"ProgressView" bundle:nil];
+    UINavigationController *nav1=[[UINavigationController alloc]initWithRootViewController:tvc];
+    [self presentModalViewController:nav1 animated:YES];
+    [self.navigationItem setHidesBackButton:NO];
     
+    [nav1 release];
+    [tvc release];
     
     
 }
 -(IBAction)TestButtonClicked
 {
-    TestsViewController *test=[[TestsViewController alloc]init];
-    [self presentModalViewController:test animated:YES];
-    [test release];
+   
+    
+    LessonsViewController *lc=[[LessonsViewController alloc]initWithNibName:@"TestView" bundle:nil];
+    UINavigationController *vc=[[UINavigationController alloc]initWithRootViewController:lc];
+    
+    
+    
+    [self presentModalViewController:vc animated:YES];
+    [lc release];
+    [vc release];
+    
+    
     
     
 }
@@ -57,13 +81,13 @@
 
 #pragma mark - View lifecycle
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg7.jpg"]]];
+    
 }
-*/
 
 - (void)viewDidUnload
 {

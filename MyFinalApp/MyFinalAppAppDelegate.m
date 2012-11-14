@@ -9,29 +9,60 @@
 #import "MyFinalAppAppDelegate.h"
 
 #import "MyFinalAppViewController.h"
-
+#import "FBViewController.h"
 @implementation MyFinalAppAppDelegate
 
 
 @synthesize window=_window;
 
 @synthesize viewController=_viewController;
-
+-(NSString*)FilePathString
+{
+    NSArray *array=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [[array objectAtIndex:0]stringByAppendingPathComponent:@"Property List.plist"];
+    
+    
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
      
+    application.applicationSupportsShakeToEdit=YES;
+   
     MyFinalAppViewController *vc=[[MyFinalAppViewController alloc]initWithNibName:@"MyFinalAppViewController" bundle:nil];
 
     [self setViewController:vc];
     [vc release];
+    if ([[NSFileManager defaultManager]fileExistsAtPath:[self FilePathString]]) {
+        
+    }
+    else
+    {
+    NSError *error;
+    
+    [[NSFileManager defaultManager]copyItemAtPath:[[NSBundle mainBundle]pathForResource:@"Property List" ofType:@"plist"] toPath:[self FilePathString] error:&error];
+    
+    
+                                                                            
+    }
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
     return YES;
 }
+-(void)setFBViewController:(FBViewController *)_controller
+{
+    controller=_controller;
+    
+}
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+        
+    return [[controller facebook]handleOpenURL:url];
+    
+    
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*
