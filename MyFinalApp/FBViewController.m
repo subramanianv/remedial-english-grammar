@@ -55,7 +55,8 @@
     
     
     if (![facebook isSessionValid]) {
-        [facebook authorize:permissions delegate:self];
+        [facebook authorize:permissions 
+         delegate:self];
     }
         
         [self publishStream];
